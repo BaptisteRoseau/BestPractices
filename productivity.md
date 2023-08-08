@@ -1,6 +1,6 @@
 # Productivity
 
-## ???
+## ?? TODO FIND A CATEGORY ??
 
 ### TODO_CODE - Unplug your mouse and use keyboard shortcuts
 
@@ -13,7 +13,7 @@ This will be confusing and hard at the beginning but over time it can multiply y
 
 ### TODO_CODE - Set up your IDE
 
-Look for a setup tutorial and best practices on the internet to find the best features or plugins of your IDE.
+Look for a set-up tutorial and best practices on the internet to find the best features or plugins of your IDE.
 
 If your team uses a standard for formatting or linting, add the tools that enforce those standard to your IDE. Some may be simple warnings, others can format all your code when saving.
 

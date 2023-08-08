@@ -35,6 +35,16 @@ Example: `CODN001` refers to the first (`001`) advice of the Naming section (`N`
 
 ## References
 
+### Books
+
 - Design Patterns
-- ByteByteGo
 - Clean Code series
+
+### YouTube
+
+- ByteByteGo
+
+### Other
+
+- DRY
+- SOLID

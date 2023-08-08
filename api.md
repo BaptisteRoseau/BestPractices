@@ -62,4 +62,10 @@ For internal services, use gRPC or Protocol Buffer for its performance.
 
 Naming in APIs is absolutely crucial and the [Code Naming](./code.md#naming) best practices apply best in Web API.
 
+The things that can be named are:
+
+- routes
+- query parameters
+- query body keys
+
 Your API must be clear, simple, documented and well named. Remember that your public API is how users will use your product and perceive your organization. A crappy API means you are a crappy organization.
