@@ -4,7 +4,7 @@ My personal best practices notebook on IT development and project management.
 
 These are the rules I follow, and some notes to avoid making the same mistakes twice. Each rule is supposed to be short.
 
-There also will be a tooling and a reference list. Currently empty but I plan on writing a lot from time to time.
+This repository is subject to reorganization improvement over time.
 
 ## Codes
 
@@ -16,7 +16,8 @@ Example: `CODN001` refers to the first (`001`) advice of the Naming section (`N`
 
 ## Table Of Content
 
-<!-- Topics -> Category -> Rule -->
+<!-- TODO:Glossary: Topics -> Category -> Rule -->
+<!-- TODO: Add a "next topic" at the en of each file to keep the reader reading -->
 
 - [Code](./code.md): `COD`
 - [API](./api.md): `API`
@@ -32,13 +33,8 @@ Example: `CODN001` refers to the first (`001`) advice of the Naming section (`N`
 - Draw.io
 - VSCodium
 
-<!-- TODO: Lister plusieurs spécifiques pour augmener notre productivité -->
-
 ## References
 
-<!-- TODO: Lister les chaines YT et livres -->
-
 - Design Patterns
-
-
-<!-- TODO: Add a "next topic" at the en of each file to keep the reader reading -->
+- ByteByteGo
+- Clean Code series

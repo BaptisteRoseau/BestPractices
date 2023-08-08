@@ -8,7 +8,7 @@ Here are some tips to help you learn and improve yourself.
 
 ### PIML001 - Be curious
 
-When someones refers to something you don'k know yet, search on the internet for it:
+When someones refers to a software or tool you don't know yet, search it on the internet:
 
 - What is it ?
 - When is it used ?
@@ -16,24 +16,24 @@ When someones refers to something you don'k know yet, search on the internet for
 - What problem does it solves ?
 - How much is it used currently ?
 
-Also read the documentation of this product.
+Read the documentation of this product.
 
 Watch videos or read newsletters to be kept up to date or to learn specific topics.
 
-You may be surprised of how much wonderful software exists and the vast amount used in the field.
+You may be surprised of how many wonderful software exists. You should at least have basic knowledge of each major software used in tech companies.
 
 Knowing a lot of them is fun, and also helps you understand your colleagues when talking about a specific technology.
 
 ### PIML002 - Read
 
-There are a lot of persons who worked in our field before us.
-You made mistakes and success. Some of them gathered this precious experience and knowledge in multiple paper sheet called "books".
+A lot of person worked in software engineering before us.
+They made mistakes, success and have lots of experiences. Some of them gathered this precious experience and knowledge in multiple paper sheets called "books".
 
-You don't need a power supply to read them, and there is a tremendous amount of knowledge written in a may to ease learning.
+You don't need a power supply to read them, and they contain a tremendous amount of knowledge, written to ease learning.
 
-Find a topic or a tool you are interested in, buy a book in that topic, read it and then __practice__ what you have learned.
+Find a topic or a tool you are interested in, buy a book in that topic, read it and __practice__ what you have learned.
 
-### PIML003 - Have personal projects
+### PIML003 - Practice
 
 When learning a new topic, the most important part is to __practice__.
 

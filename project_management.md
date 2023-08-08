@@ -20,3 +20,5 @@ This is why a company needs to build a glossary to ensure that everybody use the
 This improves both internal and external communications.
 
 ### TODO_CODE - Use Git
+
+You should use a version control tool to store our source code, such as Git.
