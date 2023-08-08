@@ -2,7 +2,7 @@
 
 My personal best practices notebook on IT development and project management.
 
-These are the guidelines I follow, and notes to avoid making the same mistakes twice.
+These are the rules I follow, and some notes to avoid making the same mistakes twice. Each rule is supposed to be short.
 
 There also will be a tooling and a reference list. Currently empty but I plan on writing a lot from time to time.
 

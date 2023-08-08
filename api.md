@@ -6,7 +6,18 @@
 
 Never silently break an API over a release.
 
-The REST standards advise using versioning onto you Web API
+The REST standards advise using versioning onto you Web API, for example using a `/v1` route prefix.
+
+When a breaking change is introduced in the API (parameter renaming, route path renaming, ...), you should mark what changed as _Deprecated_ either in the `Warning` or in the `Depreciation` HTTP Header and keep the deprecated item over at least a release.
+
+- If you only add features: no need to upgrade the version.
+- If you rename a route's parameter: allow the use the deprecated parameter but mark it as deprecated when used.
+- If you rename a route: allow the use of the deprecated route, mark is as deprecated, return an HTTP status code 300 and redirect the call to the expected route
+- If all the routes and parameters changes: this is a new API. Upgrade the version prefix to `/v2` and mark all the `/v1` routes as deprecated.
+
+When having a full API upgrade, organize your codebase in order to have all of the previous version in a single file or folder to only have to remove it when the time comes.
+
+This rule does not apply to product still being in beta.
 
 ## Web APIs
 
