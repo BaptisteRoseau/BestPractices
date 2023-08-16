@@ -4,7 +4,7 @@ My personal best practices notebook on IT development and project management.
 
 These are the rules I follow, and some notes to avoid making the same mistakes twice. Each rule is supposed to be short.
 
-This repository is subject to reorganization improvement over time.
+This repository is subject to reorganization improvement over time. Pull/Merge requests are welcome, but new rules will not be accepted if I disagree.
 
 ## Codes
 
