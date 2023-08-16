@@ -13,7 +13,7 @@
 
 Conventions help your code being consistent.
 
-### TODO_CODE - Build a Glossary
+### TODO_CODE - Build A Glossary
 
 When a project becomes complex, some concepts or objects may be called differently by different teams.
 

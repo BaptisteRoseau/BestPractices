@@ -4,7 +4,7 @@ Tests are a way to make sure the software is working as intended, bug-free, with
 
 They also serve as documentation on _how to use the code_
 
-## Types of testing
+## Types Of Testing
 
 - Functional test: Checks that the software works that way it is supposed to.
     - [Unit test](#unit-tests): Verifies small units of code such as a single methods or functions

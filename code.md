@@ -8,7 +8,7 @@ Your team should agree on conventions for the most used object types in your pro
 
 When used consistently, the following rules improve by __a lot__ code readability.
 
-### TODO_CODE - Use full words
+### TODO_CODE - Use Full Words
 
 Instead of using abbreviations or single letters, use a full word instead.
 
@@ -31,7 +31,7 @@ Abbreviations and single letter are acceptable only:
 
 This rule is even more necessary for API, functions's arguments and file names.
 
-### TODO_CODE - Don't use the type of a variable in its name
+### TODO_CODE - Don't Use The Type Of A Variable In Its Name
 
 DO:
 
@@ -49,7 +49,7 @@ This improves readability by using shorter names, and avoid variable names lying
 
 Don't worry your IDE is here to help you find the type and with auto completion.
 
-### TODO_CODE - Use plural for container objects, and only them
+### TODO_CODE - Use Plural For Container Objects, And Only Them
 
 Same as the above rule but this is important enough to be a rule by its own.
 
@@ -71,7 +71,7 @@ On the contrary, never use plural for variables that are not container objects.
 
 Queues and stacks may sometimes be singular in specific cases.
 
-### TODO_CODE - Put units in the variable name
+### TODO_CODE - Put Units In The Variable Name
 
 DO:
 
@@ -86,6 +86,79 @@ duration: u64 = 60; // seconds
 ```
 
 This allows the reader to know the variable unit wherever he reads it instead of having to jump back to its definition.
+
+### TODO_CODE - Use Meaningful Names
+
+Variables represent _something_. You should __always__ try to boil down _what_ is that concept and write it in the variable name.
+
+Avoid `data`, `value` or naming a variable by its type.
+
+DO:
+
+```c
+int* checkpoints = malloc(CHECKPOINTS_LENGTH*sizeof(int))
+```
+
+DON'T:
+
+```c
+int* data_array = malloc(DATA_LENGTH*sizeof(int))
+```
+
+There are times where the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly OK.
+
+### TODO_CODE - Use Name For Variables And Attributes, Verbs For Function
+
+This is more of a general guideline and not an absolute rule.
+
+### TODO_CODE - Use `is_` Or `should_` Prefix For Booleans
+
+DO:
+
+```python
+if self.is_ready() and self._should_run:
+    self.run()
+```
+
+DON'T:
+
+```python
+if self.ready() and self.run():
+    self.do_run()
+```
+
+This avoids confusion between:
+
+- the _actions_ to get ready and run
+- the _state_ of being ready
+- the _expected behavior_ of running or not
+
+## Writing
+
+### TODO_CODE - Top Down Organization
+
+When using a language that allows it, write the public methods and public functions at the top of the class or the module.
+
+This allows the reader to look at the available public code faster and hide the implementations details bellow, available to read only if necessary.
+
+### TODO_CODE - Keep Dependencies Close
+
+Code that uses a function within the same module should be close to the called function.
+
+### TODO_CODE - Small Functions
+
+Functions should have a single purpose.
+
+High level functions such as the `main` can be large, but the more you dive into implementation, the smaller the function should be.
+
+However, don't fall into the mistake of making too many small functions.
+It reduces readability because it requires too much back and forth between functions implementations.
+
+In general, use 2 levels of abstractions for functions or methods, 3 in some cases. If using more then then the module or the class could be refactored into smaller classes or modules.
+
+In general, avoid having functions longer that what can fit in your IDE vertical space. And don't reduce the zoom to bypass this rule.
+
+Another exception of this rule is when a very high level of optimization is required for a specific function.
 
 ### TODO_CODE - Use Affirmative In Conditional Statements
 
@@ -109,75 +182,6 @@ This ease the reading of the conditional statement.
 
 This rule is not absolute. Negative conditional statement are perfectly fine, but when the programmer has the choice, affirmative conditional statements should be chosen.
 
-### TODO_CODE - Use meaningful names
-
-Variables represent _something_. You should __always__ try to boil down _what_ is that concept and write it in the variable name.
-
-Avoid `data`, `value` or naming a variable by its type.
-
-DO:
-
-```c
-int* checkpoints = malloc(CHECKPOINTS_LENGTH*sizeof(int))
-```
-
-DON'T:
-
-```c
-int* data = malloc(DATA_LENGTH*sizeof(int))
-```
-
-There are times where the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly OK.
-
-### TODO_CODE - Use name for variables and attributes, verbs for function
-
-This is more of a general guideline and not an absolute rule.
-
-### TODO_CODE - Use `is_` or `should_` prefix for booleans
-
-DO:
-
-```python
-if self.is_ready() and self._should_run:
-    self.run()
-```
-
-DON'T:
-
-```python
-if self.ready() and self.run():
-    self.do_run()
-```
-
-This avoids confusion between the _actions_ to get ready or run and the _state_ of being ready or the _expected behavior_ of running or not.
-
-## Writing
-
-### TODO_CODE - Top down organization
-
-When using a language that allows it, write the public methods and public functions at the top of the class or the module.
-
-This allows the reader to look at the available public code faster and hide the implementations details bellow, available to read only if necessary.
-
-### TODO_CODE - Keep dependencies close
-
-Code that uses a function within the same module should be close to the called function.
-
-### TODO_CODE - Small functions
-
-Functions should have a single purpose.
-
-High level functions such as the `main` can be large, but the more you dive into implementation, the smaller the function should be.
-
-However, don't fall into the mistake of making too many small functions.
-It reduces readability because it requires too much back and forth between functions implementations.
-
-In general, use 2 levels of abstractions for functions or methods, 3 in some cases. If using more then then the module or the class could be refactored into smaller classes or modules.
-
-In general, avoid having functions longer that what can fit in your IDE vertical space. And don't reduce the zoom to bypass this rule.
-
-Another exception of this rule is when a very high level of optimization is required for a specific function.
-
 ### TODO_CODE - Comments
 
 Avoid writing comments.
@@ -192,27 +196,37 @@ Comments are useful to explain tradeoff, but they tend to be:
 
 So, avoid them.
 
-### TODO_CODE - Remove commented code
+### TODO_CODE - Remove Commented Code
 
 Commented code should be removed.
 
 If it is very important to keep it, add a commentary with the commit hash that removes the "functionality" provided but the commented code, or actually implement the functionality.
 
+### TODO_CODE - Don't Optimize At First
+
+Performance is important but should not be considered __before__ implementing a feature. The code should be __simple__, __readable__ and __maintainable__ before being __performant__.
+
+In IT, everything is a trade off, and usually, the first implementation is performant enough to avoid the need of optimization.
+
+Optimizing too early in the implementation can highly reduce maintainability and readability for a small performance gain.
+
+Always optimize your software bottleneck before optimizing features not implemented yet.
+
 ### TODO_CODE - TODOs
 
-`TODO` comment can be used while developing as a marker of an idea or work to be done.
+`TODO` comments can be used while developing as a marker of an idea or work to be done.
 
 However, they have to be implemented before getting to the code review or being merged. Especially if it take 5min to 10min to implement.
 
 Whenever you find yourself writing a TODO, implement it on the go if it is short enough.
 
-Longer TODOs, such a a full feature can be kept in the codebase, however it is a better practice to write a ticket with the specification of what needs to be done.
+Longer TODOs, such as a full feature can be kept in the codebase, however it is a better practice to write a ticket with the specification of what needs to be done.
 
 ## Documentation
 
 ### TODO_CODE - Specifications
 
-Specification should be done __before__ the project code is being written. Most importantly, the __API specification__ should be discussed and tailored before the implementation begins.
+Specification should be done __before__ the code is written. Most importantly, the __API specification__ should be discussed and tailored before the implementation begins.
 
 The specifications can often be used as the raw material for the documentation. A few adjustments generally have to be made, but if the specifications are great, the code is great, and the documentation at least exists.
 

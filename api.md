@@ -2,7 +2,7 @@
 
 ## Generalities
 
-### TODO_CODE - Don't break the API
+### TODO_CODE - Don't Break The API
 
 Never silently break an API over a release.
 
@@ -43,7 +43,7 @@ Because the indexes are iterators, we abstract their value using base64 to avoid
 
 Note that this is subject to improvement, but there are numbers of pagination best practices on the internet only waiting for you to read them.
 
-### TODO_CODE - Use standards
+### TODO_CODE - Use Standards
 
 <!-- TODO: links -->
 

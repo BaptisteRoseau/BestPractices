@@ -6,7 +6,7 @@ Learning is absolutely crucial to get better in software engineering, especially
 
 Here are some tips to help you learn and improve yourself.
 
-### PIML001 - Be curious
+### PIML001 - Be Curious
 
 When someones refers to a software or tool you don't know yet, search it on the internet:
 

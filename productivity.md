@@ -2,7 +2,7 @@
 
 ## ?? TODO FIND A CATEGORY ??
 
-### TODO_CODE - Unplug your mouse and use keyboard shortcuts
+### TODO_CODE - Unplug Your Mouse And Use Keyboard Shortcuts
 
 Using the mouse is __very__ inefficient. A decent programmer should aim to never use it and always use the keyboard shortcuts.
 
@@ -11,7 +11,7 @@ When found, keep it at hand, unplug your mouse and try to only use keyboard to n
 
 This will be confusing and hard at the beginning but over time it can multiply your productivity more that you can imagine.
 
-### TODO_CODE - Set up your IDE
+### TODO_CODE - Set Up Your IDE
 
 Look for a set-up tutorial and best practices on the internet to find the best features or plugins of your IDE.
 
