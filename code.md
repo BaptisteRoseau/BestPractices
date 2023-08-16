@@ -87,6 +87,28 @@ duration: u64 = 60; // seconds
 
 This allows the reader to know the variable unit wherever he reads it instead of having to jump back to its definition.
 
+### TODO_CODE - Use Affirmative In Conditional Statements
+
+DO:
+
+```rust
+if player.is_ready(){
+    player.play()
+}
+```
+
+DON'T
+
+```rust
+if !player.is_busy(){
+    player.play()
+}
+```
+
+This ease the reading of the conditional statement.
+
+This rule is not absolute. Negative conditional statement are perfectly fine, but when the programmer has the choice, affirmative conditional statements should be chosen.
+
 ### TODO_CODE - Use meaningful names
 
 Variables represent _something_. You should __always__ try to boil down _what_ is that concept and write it in the variable name.
