@@ -17,7 +17,7 @@ The use of interfaces is great for at least:
 - Select which implementation should be used
 - Allow team members to work in parallel
 
-Interfaces can be used everywhere, wether it is in your code, your ticket templates, your web API. Use this rule every time a feature should be provided but the implementation details do not matter.
+Interfaces can be used everywhere, whether it is in your code, your ticket templates, your web API. Use this rule every time a feature should be provided but the implementation details do not matter.
 
 An interface can be as simple as using the alias `typedef char* Name`, or using a class, a trait or a structure.
 
@@ -30,7 +30,7 @@ Just to make sure you don't forget [SARG001](#sarg001---use-interfaces)
 
 ### TODO_CODE - Business Logic Comes First
 
-When writing a piece of software, the user needs come first, not the implementation difficulty. Trade-off could be made to reduce the scope.
+When writing a piece of software, the user needs to come first, not the implementation difficulty. Trade-off could be made to reduce the scope.
 
 1. Discuss exactly what the user need is.
 1. Extract the main objects used by the business logic.
@@ -41,11 +41,25 @@ Then, write the business logic using those objects _as if_ they were already imp
 
 ### TODO_CODE - Avoid Side Effects
 
-Side effect are evil because they they hide
+Side effect are evil because they hide you current environment before and after calling the function - regardless of the return value of course.
 
-They can of course be used within an object, for example a `set_ready()` method may modify an object state, which is a side effect within an object of a class.
+If done badly, side effects can be a real nightmare to debug, especially if they are not clearly documented.
+
+They can of course be used _within_ an object, for example a `set_ready()` method may modify an object attribute, which is a side effect within an object of a class.
 
 There are some languages such as `Rust` that do a wonderful job at telling the programmer that a side effect can occur on a function parameter by specifying its mutability.
+
+### TODO_CODE - Add feature flags
+
+When adding a new feature, add a mechanism allowing to enable or disable this feature very easily: with a configuration value or an API call for example.
+
+This allows:
+
+- To quickly disable it in production if a problem happens
+- To enable it only to a subset of user, for feedback purposes
+- To allow the user to disable the feature if necessary
+
+To do so, one can either add a boolean in a configuration file or database, or an array listing enabled features for example.
 
 ## Parallelization
 
@@ -59,7 +73,7 @@ For example, `i++` in C is at least 3 different instructions:
 - increment its value
 - write the updated value into `i`
 
-This means that two threads can increment at the same time, and if `i` equals 3 and is incremented two times, then it can becomes `4` instead of 5.
+This means that two threads can increment at the same time, and if `i` equals 3 and is incremented two times, then it can become `4` instead of 5.
 
 This is the trivial example of race condition used everywhere but more complex bugs can be avoided by applying this rule consistently.
 
@@ -83,4 +97,4 @@ Read operations can usually be done in parallel, whereas it can be difficult to 
 
 Separating those operations can result in much faster and scalable read operations, at the cost of less frequent update.
 
-Even if not parallel at first, separate these operations allows to reduce refactor when scalability will become necessary.
+Even if not parallel at first, separate these operations allows reducing refactor when scalability will become necessary.
