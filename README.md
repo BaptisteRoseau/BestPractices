@@ -6,47 +6,35 @@ These are the rules I follow, and some notes to avoid making the same mistakes t
 
 This repository is subject to reorganization improvement over time. Pull/Merge requests are welcome, but new rules will not be accepted if I disagree.
 
-__Warning: This project is in continuous _Work In Progress_, expect to find some TODOs.__
+__Warning: This project is in continuous _Work In Progress_.__
 
 ## Codes
 
-Rules are organized using codes to ease reference to a specific advice.
+Rules are organized using codes to ease reference to specific advice.
 
-The codes contains a trigram for the main topic, a letter for a category and an index.
+The codes contain a trigram for the main topic, a letter for a category and an index.
 
 Example: `CODN001` refers to the first (`001`) advice of the Naming section (`N`) of the Code topic (`COD`).
 
 ## Table Of Content
 
-<!-- TODO:Glossary: Topics -> Category -> Rule -->
-<!-- TODO: Add a "next topic" at the en of each file to keep the reader reading -->
+### Topics
 
-- [Code](./code.md): `COD`
-- [API](./api.md): `API`
-- [Software Architecture](./software_architecture.md): `SAR`
-- [Tests](./tests.md): `TST`
-- [Security](./security.md): `SRT`
-- [Project Management](./project_management.md): `PMA`
-- [Productivity](./productivity.md): `PRO`
-- [Personal Improvement](./personal_improvement.md): `PIM`
+- [Code](topics/code.md): `COD`
+- [API](topics/api.md): `API`
+- [Software Architecture](topics/software_architecture.md): `SAR`
+- [Tests](topics/tests.md): `TST`
+- [Security](topics/security.md): `SRT`
+- [Project Management](topics/project_management.md): `PMA`
+- [Productivity](topics/productivity.md): `PRO`
+- [Personal Improvement](topics/personal_improvement.md): `PIM`
 
-## Tools
+### Tools
 
-- Draw.io
-- VSCodium
+- [Tools](tools/tools.md)
 
-## References
+### References
 
-### Books
-
-- Design Patterns
-- Clean Code series
-
-### YouTube
-
-- ByteByteGo
-
-### Other
-
-- DRY
-- SOLID
+- [Books](references/books.md)
+- [YouTube](references/youtube.md)
+- [Other](references/other.md)

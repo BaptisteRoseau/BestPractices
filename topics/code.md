@@ -8,7 +8,7 @@ Your team should agree on conventions for the most used object types in your pro
 
 When used consistently, the following rules improve by __a lot__ code readability.
 
-### TODO_CODE - Use Full Words
+### CODN001 - Use Full Words
 
 Instead of using abbreviations or single letters, use a full word instead.
 
@@ -31,7 +31,7 @@ Abbreviations and single letter are acceptable only:
 
 This rule is even more necessary for API, functions's arguments and file names.
 
-### TODO_CODE - Don't Use The Type Of A Variable In Its Name
+### CODN002 - Don't Use The Type Of A Variable In Its Name
 
 DO:
 
@@ -49,7 +49,7 @@ This improves readability by using shorter names, and avoid variable names lying
 
 Don't worry your IDE is here to help you find the type and with auto completion.
 
-### TODO_CODE - Use Plural For Container Objects, And Only Them
+### CODN003 - Use Plural For Container Objects, And Only Them
 
 Same as the above rule but this is important enough to be a rule by its own.
 
@@ -71,7 +71,7 @@ On the contrary, never use plural for variables that are not container objects.
 
 Queues and stacks may sometimes be singular in specific cases.
 
-### TODO_CODE - Put Units In The Variable Name
+### CODN004 - Put Units In The Variable Name
 
 DO:
 
@@ -87,7 +87,7 @@ duration: u64 = 60; // seconds
 
 This allows the reader to know the variable unit wherever he reads it instead of having to jump back to its definition.
 
-### TODO_CODE - Use Meaningful Names
+### CODN005 - Use Meaningful Names
 
 Variables represent _something_. You should __always__ try to boil down _what_ is that concept and write it in the variable name.
 
@@ -107,11 +107,11 @@ int* data_array = malloc(DATA_LENGTH*sizeof(int))
 
 There are times where the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly OK.
 
-### TODO_CODE - Use Name For Variables And Attributes, Verbs For Function
+### CODN006 - Use Name For Variables And Attributes, Verbs For Function
 
 This is more of a general guideline and not an absolute rule.
 
-### TODO_CODE - Use `is_` Or `should_` Prefix For Booleans
+### CODN007 - Use `is_` Or `should_` Prefix For Booleans
 
 DO:
 
@@ -135,17 +135,17 @@ This avoids confusion between:
 
 ## Writing
 
-### TODO_CODE - Top Down Organization
+### CODW001 - Top Down Organization
 
 When using a language that allows it, write the public methods and public functions at the top of the class or the module.
 
 This allows the reader to look at the available public code faster and hide the implementations details bellow, available to read only if necessary.
 
-### TODO_CODE - Keep Dependencies Close
+### CODW002 - Keep Dependencies Close
 
 Code that uses a function within the same module should be close to the called function.
 
-### TODO_CODE - Small Functions
+### CODW003 - Small Functions
 
 Functions should have a single purpose.
 
@@ -154,13 +154,13 @@ High level functions such as the `main` can be large, but the more you dive into
 However, don't fall into the mistake of making too many small functions.
 It reduces readability because it requires too much back and forth between functions implementations.
 
-In general, use 2 levels of abstractions for functions or methods, 3 in some cases. If using more then then the module or the class could be refactored into smaller classes or modules.
+In general, use 2 levels of abstractions for functions or methods, 3 in some cases. If using more then the module or the class could be refactored into smaller classes or modules.
 
 In general, avoid having functions longer that what can fit in your IDE vertical space. And don't reduce the zoom to bypass this rule.
 
-Another exception of this rule is when a very high level of optimization is required for a specific function.
+Another exception to this rule is when a very high level of optimization is required for a specific function.
 
-### TODO_CODE - Use Affirmative In Conditional Statements
+### CODW004 - Use Affirmative In Conditional Statements
 
 DO:
 
@@ -182,7 +182,7 @@ This ease the reading of the conditional statement.
 
 This rule is not absolute. Negative conditional statement are perfectly fine, but when the programmer has the choice, affirmative conditional statements should be chosen.
 
-### TODO_CODE - Comments
+### CODW005 - Comments
 
 Avoid writing comments.
 
@@ -196,13 +196,13 @@ Comments are useful to explain tradeoff, but they tend to be:
 
 So, avoid them.
 
-### TODO_CODE - Remove Commented Code
+### CODW006 - Remove Commented Code
 
 Commented code should be removed.
 
 If it is very important to keep it, add a commentary with the commit hash that removes the "functionality" provided but the commented code, or actually implement the functionality.
 
-### TODO_CODE - Don't Optimize At First
+### CODW007 - Don't Optimize At First
 
 Performance is important but should not be considered __before__ implementing a feature. The code should be __simple__, __readable__ and __maintainable__ before being __performant__.
 
@@ -212,7 +212,7 @@ Optimizing too early in the implementation can highly reduce maintainability and
 
 Always optimize your software bottleneck before optimizing features not implemented yet.
 
-### TODO_CODE - TODOs
+### CODW008 - TODOs
 
 `TODO` comments can be used while developing as a marker of an idea or work to be done.
 
@@ -224,13 +224,13 @@ Longer TODOs, such as a full feature can be kept in the codebase, however it is 
 
 ## Documentation
 
-### TODO_CODE - Specifications
+### CODD001 - Specifications
 
 Specification should be done __before__ the code is written. Most importantly, the __API specification__ should be discussed and tailored before the implementation begins.
 
 The specifications can often be used as the raw material for the documentation. A few adjustments generally have to be made, but if the specifications are great, the code is great, and the documentation at least exists.
 
-### TODO_CODE - Code Documentation
+### CODD001 - Code Documentation
 
 Code documentation should be written directly into the code, using docstring or a third party tool like Doxygen. Not every function requires it, but all the public functions of a class or module should be documented.
 
@@ -245,17 +245,19 @@ def is_ready(self) -> bool:
 - If the function above is private: no need to document it.
 - If the function above is public: you should document it using a documentation tool format.
 
-### TODO_CODE - Internal Documentation
+### CODD001 - Internal Documentation
 
 Internal documentation is a kind a documentation that is made for developers and infrastructure engineers. It should be visual and simple, containing:
 
 - A class diagram: how do the objects interact with each others
 - A data flow diagram: where the data comes from and where it is processed ?
 - A quick explanation of how a module is supposed to work and interact with the others
-- Explanations of the tradeoff choices made during the development if any
+- Explanations of the trade off choices made during the development if any
 
 The last point is critical to avoid making the mistake of taking the wrong path after long brainstorming that already pointed out why this decision has been rejected.
 
-### TODO_CODE - Public Documentation
+### CODD001 - Public Documentation
 
 Public documentation is by far the most important. Being public, it reflects the quality of your product, regardless of the code.
+
+Next: [API](./api.md)

@@ -2,7 +2,7 @@
 
 ## Generalities
 
-### TODO_CODE - Don't Break The API
+### APIG001 - Don't Break The API
 
 Never silently break an API over a release.
 
@@ -21,7 +21,7 @@ This rule does not apply to product still being in beta.
 
 ## Web APIs
 
-### TODO_CODE - Pagination
+### APIW001 - Pagination
 
 For pagination, use at least the pattern `first`, `last`, `from`, `amount`.
 
@@ -43,7 +43,7 @@ Because the indexes are iterators, we abstract their value using base64 to avoid
 
 Note that this is subject to improvement, but there are numbers of pagination best practices on the internet only waiting for you to read them.
 
-### TODO_CODE - Use Standards
+### APIW002 - Use Standards
 
 <!-- TODO: links -->
 
@@ -58,7 +58,7 @@ Most web APIs use REST for its simplicity.
 For data access, organizations are transitioning towards GraphQL.
 For internal services, use gRPC or Protocol Buffer for its performance.
 
-### TODO_CODE - Naming
+### APIW003 - Naming
 
 Naming in APIs is absolutely crucial and the [Code Naming](./code.md#naming) best practices apply best in Web API.
 
@@ -69,3 +69,5 @@ The things that can be named are:
 - query body keys
 
 Your API must be clear, simple, documented and well named. Remember that your public API is how users will use your product and perceive your organization. A crappy API means you are a crappy organization.
+
+Next: [Software Architecture](./software_architecture.md)

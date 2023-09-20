@@ -28,7 +28,7 @@ If it provides visibility mechanisms such as `public`, `private` or `protected` 
 
 Just to make sure you don't forget [SARG001](#sarg001---use-interfaces)
 
-### TODO_CODE - Business Logic Comes First
+### SARG003 - Business Logic Comes First
 
 When writing a piece of software, the user needs to come first, not the implementation difficulty. Trade-off could be made to reduce the scope.
 
@@ -39,7 +39,7 @@ When writing a piece of software, the user needs to come first, not the implemen
 
 Then, write the business logic using those objects _as if_ they were already implemented.
 
-### TODO_CODE - Avoid Side Effects
+### SARG004 - Avoid Side Effects
 
 Side effect are evil because they hide you current environment before and after calling the function - regardless of the return value of course.
 
@@ -49,7 +49,7 @@ They can of course be used _within_ an object, for example a `set_ready()` metho
 
 There are some languages such as `Rust` that do a wonderful job at telling the programmer that a side effect can occur on a function parameter by specifying its mutability.
 
-### TODO_CODE - Add feature flags
+### SARG005 - Add feature flags
 
 When adding a new feature, add a mechanism allowing to enable or disable this feature very easily: with a configuration value or an API call for example.
 
@@ -63,7 +63,7 @@ To do so, one can either add a boolean in a configuration file or database, or a
 
 ## Parallelization
 
-### TODO_CODE - Always Consider Instruction Being Executed At The Same Time
+### SARP001 - Always Consider Instruction Being Executed At The Same Time
 
 When writing parallel code, always consider that every single instruction can be executed at the same time.
 
@@ -77,7 +77,7 @@ This means that two threads can increment at the same time, and if `i` equals 3 
 
 This is the trivial example of race condition used everywhere but more complex bugs can be avoided by applying this rule consistently.
 
-### TODO_CODE - Protect Critical Paths
+### SARP002 - Protect Critical Paths
 
 _Critical Paths_ are lines of code that should not be executed in parallel, for example incrementing a counter.
 
@@ -91,10 +91,12 @@ A parallelizable ADT (_abstract data type_) is an ADT which interface can be imp
 
 For example, a linked list can be fully parallelizable using only atomic instruction in the critical paths, except for its memory management which requires locks.
 
-### TODO_CODE - Separate Read And Write Operation
+### SARP003 - Separate Read And Write Operation
 
 Read operations can usually be done in parallel, whereas it can be difficult to parallelize write operations.
 
 Separating those operations can result in much faster and scalable read operations, at the cost of less frequent update.
 
 Even if not parallel at first, separate these operations allows reducing refactor when scalability will become necessary.
+
+Next: [Tests](./tests.md)
