@@ -7,7 +7,12 @@
 1. Gather feedback on the most needed feature from users
 1. Specify __what__ is needed by the users in details
 1. Specify __how__ it can be done by the technical team
-1. Specify __the interface__ (API)
+1. Specify __the interface__ between the user and the implementation details (API)
+1. __Mock__ the interface to allow all parties to work in parallel
+1. __Implement__ the API endpoints, improve it if necessary
+1. __Test__ the API endpoints
+1. __Document__ the feature by re-using the specifications
+1. __Deliver__ the feature, gather feadback from the users and repeat
 
 ## Conventions
 
