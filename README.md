@@ -27,6 +27,7 @@ Example: `CODN001` refers to the first (`001`) advice of the Naming section (`N`
 - [Security](topics/security.md): `SRT`
 - [Project Management](topics/project_management.md): `PMA`
 - [Productivity](topics/productivity.md): `PRO`
+- [Web](topics/web.md): `WEB`
 - [Personal Improvement](topics/personal_improvement.md): `PIM`
 
 ### Tools
