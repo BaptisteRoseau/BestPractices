@@ -111,7 +111,7 @@ There are times where the content of a variable or an attribute is so abstracted
 
 This is more of a general guideline and not an absolute rule.
 
-### CODN007 - Use `is_` Or `should_` Prefix For Booleans
+### CODN007 - Use Verbs Prefix Like `is_` Or `should_` For Booleans
 
 DO:
 
@@ -143,7 +143,7 @@ This allows the reader to look at the available public code faster and hide the 
 
 ### CODW002 - Keep Dependencies Close
 
-Code that uses a function within the same module should be close to the called function.
+Code that uses a function within the same module should be close to the called function in terms of lines.
 
 ### CODW003 - Small Functions
 
