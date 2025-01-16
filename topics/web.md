@@ -27,3 +27,43 @@ Similar to [robots.txt](#webs001---robotstxt), it allows to guide search engine 
 See the [documentation](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview).
 
 Next: [Personal Improvement](topics/personal_improvement.md)
+
+## Database
+
+### WEBD001 - Transactions and rollback
+
+When doing an SQL that is not read-only, always use a transaction to be able to rollback.
+
+If in a script, use:
+
+```sql
+BEGIN TRANSACTION [Tran1]
+
+  BEGIN TRY
+    
+    <your SQL query goes here>
+
+    COMMIT TRANSACTION [Tran1]
+
+  END TRY
+
+  BEGIN CATCH
+
+      ROLLBACK TRANSACTION [Tran1]
+
+  END CATCH  
+```
+
+If manually writing the command, use:
+
+```sql
+BEGIN TRANSACTION;
+<your SQL query goes here>
+<your SELECT query to make sure everything is OK goes here>
+
+-- If everything is OK
+COMMIT TRANSACTION;
+
+-- If you somehow screw up
+ROLLBACK TRANSACTION;
+```
