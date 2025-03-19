@@ -6,3 +6,4 @@
 - [https://app.uxcel.com/courses](https://app.uxcel.com/courses): UI/UX Design courses
 - [Loaders](https://cssloaders.github.io/): HTML/CSS Loaders.
 - [easings.net](https://easings.net/): Easing functions for any languages, including CSS.
+- [caesium-clt](https://github.com/Lymphatus/caesium-clt): A CLI tool for compressing, resizing and formating images.
