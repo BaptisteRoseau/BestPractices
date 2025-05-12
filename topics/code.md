@@ -230,7 +230,7 @@ Specification should be done __before__ the code is written. Most importantly, t
 
 The specifications can often be used as the raw material for the documentation. A few adjustments generally have to be made, but if the specifications are great, the code is great, and the documentation at least exists.
 
-### CODD001 - Code Documentation
+### CODD002 - Code Documentation
 
 Code documentation should be written directly into the code, using docstring or a third party tool like Doxygen. Not every function requires it, but all the public functions of a class or module should be documented.
 
@@ -245,7 +245,7 @@ def is_ready(self) -> bool:
 - If the function above is private: no need to document it.
 - If the function above is public: you should document it using a documentation tool format.
 
-### CODD001 - Internal Documentation
+### CODD003 - Internal Documentation
 
 Internal documentation is a kind a documentation that is made for developers and infrastructure engineers. It should be visual and simple, containing:
 
@@ -256,7 +256,7 @@ Internal documentation is a kind a documentation that is made for developers and
 
 The last point is critical to avoid making the mistake of taking the wrong path after long brainstorming that already pointed out why this decision has been rejected.
 
-### CODD001 - Public Documentation
+### CODD004 - Public Documentation
 
 Public documentation is by far the most important. Being public, it reflects the quality of your product, regardless of the code.
 
