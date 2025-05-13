@@ -19,4 +19,4 @@ If your team uses a standard for formatting or linting, add the tools that enfor
 
 You should __always__ code with error checking and methods auto-completion within your IDE.
 
-Next: [Web](topics/web.md)
+Next: [Web](./web.md)

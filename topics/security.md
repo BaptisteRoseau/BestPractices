@@ -89,4 +89,4 @@ Always pull your container images from trusted sources and publishers, or build 
 
 This is a duplicate of [Keep Your Software Up To Date](#srtg003---keep-your-software-up-to-date). However, encryption stack is so critical its update deserves its own rule.
 
-Next: [Project Management](topics/project_management.md)
+Next: [Project Management](./project_management.md)

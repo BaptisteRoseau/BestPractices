@@ -26,8 +26,6 @@ Similar to [robots.txt](#webs001---robotstxt), it allows to guide search engine 
 
 See the [documentation](https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview).
 
-Next: [Personal Improvement](topics/personal_improvement.md)
-
 ## Database
 
 ### WEBD001 - Transactions and rollback
@@ -67,3 +65,5 @@ COMMIT TRANSACTION;
 -- If you somehow screw up
 ROLLBACK TRANSACTION;
 ```
+
+Next: [Personal Improvement](./personal_improvement.md)

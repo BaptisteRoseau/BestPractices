@@ -39,4 +39,4 @@ This improves both internal and external communications.
 
 You should use a version control tool to store our source code, such as Git.
 
-Next: [Productivity](topics/productivity.md)
+Next: [Productivity](./productivity.md)
