@@ -12,6 +12,7 @@
     "Liskov",
     "malloc",
     "nonroot",
+    "PIML",
     "PMAC",
     "PMAP",
     "PMAS",
@@ -23,6 +24,7 @@
     "SRTE",
     "SRTG",
     "SRTX",
+    "TSTU",
     "WEBA",
     "WEBD",
     "websequencediagrams"
