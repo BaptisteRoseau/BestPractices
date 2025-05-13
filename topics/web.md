@@ -1,6 +1,6 @@
 # Web
 
-There are plenty of best practices to follow on the web to make your website more accessible or having a higher rank on search engines, hence more traffic. Here is a non-exhaustive list to help you in that regard.
+There are plenty of best practices to follow on the web to make your website more accessible or having a higher rank on search engines, hence more traffic. Here is a non-exhaustive list to help you doing so.
 
 ## Accessibility
 
@@ -16,7 +16,7 @@ If possible, automatically check the accessibility of your website within your C
 
 ### WEBS001 - robots.txt
 
-Search engines use crawlers to map the web and find websites. You can guide them through yours using a `robots.txt` file at the root of your website.
+Search engines use crawlers to map the web and find websites. You can guide them through yours using a `robots.txt` file at the root of your website, and prevent them going into unauthorized pages.
 
 See the [documentation](https://developers.google.com/search/docs/crawling-indexing/robots/intro).
 
@@ -30,25 +30,20 @@ See the [documentation](https://developers.google.com/search/docs/crawling-index
 
 ### WEBD001 - Transactions and rollback
 
-When doing an SQL that is not read-only, always use a transaction to be able to rollback.
+When doing an SQL query that is not read-only, always use a transaction to be able to rollback.
 
 If in a script, use:
 
 ```sql
 BEGIN TRANSACTION [Tran1]
-
   BEGIN TRY
     
     <your SQL query goes here>
 
     COMMIT TRANSACTION [Tran1]
-
   END TRY
-
   BEGIN CATCH
-
       ROLLBACK TRANSACTION [Tran1]
-
   END CATCH  
 ```
 
