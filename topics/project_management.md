@@ -12,7 +12,7 @@
 1. __Implement__ the API endpoints, improve it if necessary
 1. __Test__ the API endpoints
 1. __Document__ the feature by re-using the specifications
-1. __Deliver__ the feature, gather feadback from the users and repeat
+1. __Deliver__ the feature, gather feedback from the users and repeat
 
 ## Conventions
 

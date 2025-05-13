@@ -3,15 +3,23 @@
   "language": "en",
   "version": "0.2",
   "words": [
+    "CODD",
+    "CODW",
     "distroless",
     "Fireship",
     "Liskov",
+    "malloc",
     "nonroot",
+    "PMAC",
+    "PMAP",
+    "PMAS",
+    "PROE",
     "readelf",
     "SRTC",
     "SRTE",
     "SRTG",
     "SRTX",
+    "WEBA",
     "WEBD",
     "websequencediagrams"
   ]

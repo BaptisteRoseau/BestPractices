@@ -6,8 +6,6 @@ These are the rules I follow, and some notes to avoid making the same mistakes t
 
 This repository is subject to reorganization improvement over time. Pull/Merge requests are welcome, but new rules will not be accepted if I disagree.
 
-__Warning: This project is in continuous _Work In Progress_.__
-
 ## Codes
 
 Rules are organized using codes to ease reference to specific advice.
@@ -15,6 +13,12 @@ Rules are organized using codes to ease reference to specific advice.
 The codes contain a trigram for the main topic, a letter for a category and an index.
 
 Example: `CODN001` refers to the first (`001`) advice of the Naming section (`N`) of the Code topic (`COD`).
+
+## Warnings
+
+- __No rule is absolute.__ These rules are __guidelines__, it is up to the developer and his team to decide if they should
+be applied or not.
+- This project is in continuous _Work In Progress_.
 
 ## Table Of Content
 

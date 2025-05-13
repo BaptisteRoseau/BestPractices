@@ -6,7 +6,7 @@ Naming is important to improve consistency and readability of a code base.
 
 Your team should agree on conventions for the most used object types in your project.
 
-When used consistently, the following rules improve by __a lot__ code readability.
+When used consistently, the following rules improve code readability by __a lot__.
 
 ### CODN001 - Use Full Words
 
@@ -21,13 +21,14 @@ start = time.time()
 DON'T:
 
 ```python
-s  = time.time()
+s = time.time()
 ```
 
 Abbreviations and single letter are acceptable only:
 
-- by conventions: `i` or `k` for iterators for example
-- by written conventions used by your team
+- by conventions: `i` or `k` for iterators for example.
+- by written conventions used by your team.
+- for very short functions (1-4 lines) having abstract parameters like `sum`.
 
 This rule is even more necessary for API, functions's arguments and file names.
 
@@ -45,15 +46,15 @@ DON'T
 start_timestamp = 0
 ```
 
-This improves readability by using shorter names, and avoid variable names lying when their types needs an update but their name is not modified.
+This improves readability by using shorter names, and avoid variable names lying when their types needs an update but their name is not modified, like `times_dict` suddenly becoming a list but still named `times_dict`.
 
-Don't worry your IDE is here to help you find the type and with auto completion.
+Don't worry your IDE is here to help you find the type and has auto completion.
 
 ### CODN003 - Use Plural For Container Objects, And Only Them
 
 Same as the above rule but this is important enough to be a rule by its own.
 
-A container object is an object tat _contains_ other objects such as a list, a hash map, a vector, a tuple, a queue etc..
+A container object is an object that _contains_ other objects such as a list, a hash map, a vector, a tuple, a queue etc..
 
 DO:
 
@@ -69,7 +70,7 @@ userList: Vector<User> = vec![];
 
 On the contrary, never use plural for variables that are not container objects.
 
-Queues and stacks may sometimes be singular in specific cases.
+Queues and stacks may sometimes be singular in specific cases, like `buffer` for example.
 
 ### CODN004 - Put Units In The Variable Name
 
@@ -89,7 +90,7 @@ This allows the reader to know the variable unit wherever he reads it instead of
 
 ### CODN005 - Use Meaningful Names
 
-Variables represent _something_. You should __always__ try to boil down _what_ is that concept and write it in the variable name.
+Variables represent _something_. You should __always__ try to boil down _what_ that concept is and write it in the variable name.
 
 Avoid `data`, `value` or naming a variable by its type.
 
@@ -105,11 +106,13 @@ DON'T:
 int* data_array = malloc(DATA_LENGTH*sizeof(int))
 ```
 
-There are times where the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly OK.
+There are times where the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly fine.
 
-### CODN006 - Use Name For Variables And Attributes, Verbs For Function
+### CODN006 - Use Name For Variables And Attributes, Verbs For Functions And Methods
 
 This is more of a general guideline and not an absolute rule.
+
+It helps with readability, but some cases like the following rule show valid exceptions to this one.
 
 ### CODN007 - Use Verbs Prefix Like `is_` Or `should_` For Booleans
 
@@ -145,22 +148,53 @@ This allows the reader to look at the available public code faster and hide the 
 
 Code that uses a function within the same module should be close to the called function in terms of lines.
 
+Modules that are tightly coupled together should be close in terms of folders.
+
 ### CODW003 - Small Functions
 
 Functions should have a single purpose.
 
-High level functions such as the `main` can be large, but the more you dive into implementation, the smaller the function should be.
+High level functions such as `main` can be large, but the more you dive into implementation, the smaller the function should be.
 
 However, don't fall into the mistake of making too many small functions.
 It reduces readability because it requires too much back and forth between functions implementations.
 
-In general, use 2 levels of abstractions for functions or methods, 3 in some cases. If using more then the module or the class could be refactored into smaller classes or modules.
+In general, a module of class should use 1 to 3 levels of abstractions for its public functions or methods. If using more then the module or the class could be refactored into smaller classes or modules.
+
+An abstraction level is one function call in the _call stack_, starting at 0. In the following example, the abstraction level is 3.
+
+```py
+# Call Stack:
+# 0. my_public_interface
+# 1. first_level_abs_2
+# 2. second_levels_abs
+# 3. third_levels_abs
+
+def my_public_interface():
+    first_level_abs_1()
+    first_level_abs_2()
+    return
+
+def first_level_abs_1():
+    return
+
+def first_level_abs_2():
+    second_levels_abs()
+    return
+
+def second_levels_abs():
+    third_levels_abs()
+    return
+
+def third_levels_abs():
+    return
+```
 
 In general, avoid having functions longer that what can fit in your IDE vertical space. And don't reduce the zoom to bypass this rule.
 
-Another exception to this rule is when a very high level of optimization is required for a specific function.
+An exception to this rule is when a very high level of optimization is required for a specific function. Such a function should be wrapped in a clear interface that everybody want to use but nobody wants to dive into.
 
-### CODW004 - Use Affirmative In Conditional Statements
+### CODW004 - Use Affirmative In Conditional Statements If You Have The Choice
 
 DO:
 
@@ -184,11 +218,11 @@ This rule is not absolute. Negative conditional statement are perfectly fine, bu
 
 ### CODW005 - Comments
 
-Avoid writing comments.
+Avoid writing unnecessary comments.
 
 If you find yourself writing a commend above a block of code, write this block of code in a __function__ instead.
 
-Comments are useful to explain tradeoff, but they tend to be:
+Comments are useful to explain trade off, but they tend to be:
 
 - unread
 - forgotten
@@ -196,11 +230,14 @@ Comments are useful to explain tradeoff, but they tend to be:
 
 So, avoid them.
 
+Valid uses of comments are explanations of _why_ some code is written the way it is, never _what_ it does.
+For example, explaining _why_ an unorthodox code architecture was chosen, and _why_ it should not be modified (security, performance..).
+
 ### CODW006 - Remove Commented Code
 
 Commented code should be removed.
 
-If it is very important to keep it, add a commentary with the commit hash that removes the "functionality" provided but the commented code, or actually implement the functionality.
+If it is very important to keep it, add a commentary with the commit hash that removes the "functionality" provided by the commented code, or actually implement the functionality.
 
 ### CODW007 - Don't Optimize At First
 
@@ -220,15 +257,15 @@ However, they have to be implemented before getting to the code review or being 
 
 Whenever you find yourself writing a TODO, implement it on the go if it is short enough.
 
-Longer TODOs, such as a full feature can be kept in the codebase, however it is a better practice to write a ticket with the specification of what needs to be done.
+Longer TODOs, such as a full feature can be kept in the codebase, however it is a better practice to write a ticket with the specification of what needs to be done instead.
 
 ## Documentation
 
 ### CODD001 - Specifications
 
-Specification should be done __before__ the code is written. Most importantly, the __API specification__ should be discussed and tailored before the implementation begins.
+Specification should be written __before__ the code. Most importantly, the __API specification__ should be discussed and tailored before the implementation begins.
 
-The specifications can often be used as the raw material for the documentation. A few adjustments generally have to be made, but if the specifications are great, the code is great, and the documentation at least exists.
+The specifications can often be used as raw material for the documentation. A few adjustments generally have to be made, but if the specifications are great, the code is great, and the documentation at least exists.
 
 ### CODD002 - Code Documentation
 
@@ -250,7 +287,7 @@ def is_ready(self) -> bool:
 Internal documentation is a kind a documentation that is made for developers and infrastructure engineers. It should be visual and simple, containing:
 
 - A class diagram: how do the objects interact with each others
-- A data flow diagram: where the data comes from and where it is processed ?
+- A data flow diagram: where the data comes from and where it is processed
 - A quick explanation of how a module is supposed to work and interact with the others
 - Explanations of the trade off choices made during the development if any
 
@@ -259,5 +296,15 @@ The last point is critical to avoid making the mistake of taking the wrong path 
 ### CODD004 - Public Documentation
 
 Public documentation is by far the most important. Being public, it reflects the quality of your product, regardless of the code.
+
+Some tools can automatically generate documentation for the class diagram of the explanation of the module from code documentation. For example, this is how Rust crates documentation is generated. If such a tool exists for your tech stack, use it.
+
+### CODD005 - API Specifications
+
+API specifications, whether they are public or private should be generated through automated tooling based on the API code. For example:
+
+- REST API: Create an OpenAPI JSON, make it available to the public and generate your web API documentation with it. It helps with consistency between documentation and the actual API.
+- GraphQL: Usually uses a schema file, use it to generate the documentation.
+- gRPC: Usually, a `.proto` file is used to generate the API. You can use the same file to generate your API documentation.
 
 Next: [API](./api.md)
