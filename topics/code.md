@@ -289,7 +289,7 @@ Internal documentation is a kind a documentation that is made for developers and
 - A class diagram: how do the objects interact with each others
 - A data flow diagram: where the data comes from and where it is processed
 - A quick explanation of how a module is supposed to work and interact with the others
-- Explanations of the trade off choices made during the development if any
+- Explanations of the trade-off choices made during the development if any
 
 The last point is critical to avoid making the mistake of taking the wrong path after long brainstorming that already pointed out why this decision has been rejected.
 
@@ -306,5 +306,11 @@ API specifications, whether they are public or private should be generated throu
 - REST API: Create an OpenAPI JSON, make it available to the public and generate your web API documentation with it. It helps with consistency between documentation and the actual API.
 - GraphQL: Usually uses a schema file, use it to generate the documentation.
 - gRPC: Usually, a `.proto` file is used to generate the API. You can use the same file to generate your API documentation.
+
+### CODD006 - Keep Documentation Up To Date
+
+It is easy to forget to update documentation after implementing a feature.
+
+The best way to keep a documentation up to date is to automatically generate every piece of documentation that can be generated. For the rest, you need to include documentation update as part of your current task, not just implementation and testing.
 
 Next: [API](./api.md)
