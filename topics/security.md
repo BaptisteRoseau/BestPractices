@@ -16,14 +16,14 @@ By considering everything already hacked, you can clearly see what needs additio
 
 ### SRTG002 - Use Minimal Permissions
 
-You should always give minimal permissions wether in the production environment or the CI/CD tooling and organization member accesses. However, make sure that factorization is always considered **before** this step. Avoid duplication, and if a reorganization is required, reorganize.
+You should always give minimal permissions whether in the production environment or the CI/CD tooling and organization member accesses. However, make sure that factorization is always considered **before** this step. Avoid duplication, and if a reorganization is required, reorganize.
 
 A drawback of this rule is that access and management of the production environment and the CI/CD tools can become unbelievably hard is done badly.
 This can be overcome by using standards, containers or tools to avoid manual management by all cost.
 
 ### SRTG003 - Keep Your Software Up To Date
 
-There is a tremendous amount of new vulnerabilities found every day. Those vulnerabilities are often patched rapidly so you should alway keep your software up to date to make sure those vulnerabilities include those patches.
+There is a tremendous amount of new vulnerabilities found every day. Those vulnerabilities are often patched rapidly so you should always keep your software up to date to make sure those vulnerabilities include those patches.
 
 ## Executables
 

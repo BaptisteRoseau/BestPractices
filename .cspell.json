@@ -3,6 +3,16 @@
   "language": "en",
   "version": "0.2",
   "words": [
-    "WEBD"
+    "distroless",
+    "Fireship",
+    "Liskov",
+    "nonroot",
+    "readelf",
+    "SRTC",
+    "SRTE",
+    "SRTG",
+    "SRTX",
+    "WEBD",
+    "websequencediagrams"
   ]
 }
