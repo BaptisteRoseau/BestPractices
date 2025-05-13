@@ -17,7 +17,7 @@ The use of interfaces is beneficial for at least:
 - Selecting which implementation should be used
 - Allowing team members to work in parallel
 
-Interfaces can be used everywhere, whether in your code, your ticket templates, or your web API. Use this rule every time a feature should be provided but the implementation details do not matter.
+Interfaces can be used everywhere, whether in your code, your ticket templates, or your web API. Use this rule every time a feature should be provided, but the implementation details do not matter.
 
 An interface can be as simple as using the alias `typedef char* Name`, or using a class, a trait, or a structure.
 
@@ -75,7 +75,7 @@ For example, `i++` in C is at least 3 different instructions:
 
 This means that two threads can increment at the same time, and if `i` equals 3 and is incremented two times, then it can become `4` instead of 5.
 
-This is the trivial example of race condition used everywhere but more complex bugs can be avoided by applying this rule consistently.
+This is the trivial example of race condition used everywhere, but more complex bugs can be avoided by applying this rule consistently.
 
 ### SARP002 - Protect Critical Paths
 

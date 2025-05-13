@@ -15,7 +15,7 @@ When a breaking change is introduced in the API (parameter renaming, route path 
 - If you rename a route: allow the use of the deprecated route, mark it as deprecated, return an HTTP status code 300, and redirect the call to the expected route.
 - If all the routes and parameters change: this is a new API. Upgrade the version prefix to `/v2` and mark all the `/v1` routes as deprecated.
 
-When having a full API upgrade, organize your codebase in order to have all of the previous versions in a single file or folder to only have to remove it when the time comes.
+When having a full API upgrade, organize your codebase in order to have all the previous versions in a single file or folder to only have to remove it when the time comes.
 
 This rule does not apply to products still being in beta.
 
