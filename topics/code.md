@@ -2,7 +2,7 @@
 
 ## Naming
 
-Naming is important to improve consistency and readability of a code base.
+Naming is important to improve consistency and readability of a codebase.
 
 Your team should agree on conventions for the most used object types in your project.
 
@@ -24,13 +24,13 @@ DON'T:
 s = time.time()
 ```
 
-Abbreviations and single letter are acceptable only:
+Abbreviations and single letters are acceptable only:
 
-- by conventions: `i` or `k` for iterators for example.
+- by conventions: `i` or `k` for iterators, for example.
 - by written conventions used by your team.
 - for very short functions (1-4 lines) having abstract parameters like `sum`.
 
-This rule is even more necessary for API, functions's arguments and file names.
+This rule is even more necessary for APIs, function arguments, and file names.
 
 ### CODN002 - Don't Use The Type Of A Variable In Its Name
 
@@ -46,15 +46,15 @@ DON'T
 start_timestamp = 0
 ```
 
-This improves readability by using shorter names, and avoid variable names lying when their types needs an update but their name is not modified, like `times_dict` suddenly becoming a list but still named `times_dict`.
+This improves readability by using shorter names and avoids variable names lying when their types need an update but their name is not modified, like `times_dict` suddenly becoming a list but still named `times_dict`.
 
-Don't worry your IDE is here to help you find the type and has auto completion.
+Don't worry; your IDE is here to help you find the type and has auto-completion.
 
 ### CODN003 - Use Plural For Container Objects, And Only Them
 
-Same as the above rule but this is important enough to be a rule by its own.
+Same as the above rule, but this is important enough to be a rule on its own.
 
-A container object is an object that _contains_ other objects such as a list, a hash map, a vector, a tuple, a queue etc..
+A container object is an object that _contains_ other objects such as a list, a hash map, a vector, a tuple, a queue, etc.
 
 DO:
 
@@ -70,7 +70,7 @@ userList: Vector<User> = vec![];
 
 On the contrary, never use plural for variables that are not container objects.
 
-Queues and stacks may sometimes be singular in specific cases, like `buffer` for example.
+Queues and stacks may sometimes be singular in specific cases, like `buffer`, for example.
 
 ### CODN004 - Put Units In The Variable Name
 
@@ -86,13 +86,13 @@ DON'T
 duration: u64 = 60; // seconds
 ```
 
-This allows the reader to know the variable unit wherever he reads it instead of having to jump back to its definition.
+This allows the reader to know the variable unit wherever they read it instead of having to jump back to its definition.
 
 ### CODN005 - Use Meaningful Names
 
 Variables represent _something_. You should __always__ try to boil down _what_ that concept is and write it in the variable name.
 
-Avoid `data`, `value` or naming a variable by its type.
+Avoid `data`, `value`, or naming a variable by its type.
 
 DO:
 
@@ -106,15 +106,15 @@ DON'T:
 int* data_array = malloc(DATA_LENGTH*sizeof(int))
 ```
 
-There are times where the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly fine.
+There are times when the content of a variable or an attribute is so abstracted that no concept can be found. In such cases, the use of `data` is perfectly fine.
 
-### CODN006 - Use Name For Variables And Attributes, Verbs For Functions And Methods
+### CODN006 - Use Names For Variables And Attributes, Verbs For Functions And Methods
 
 This is more of a general guideline and not an absolute rule.
 
 It helps with readability, but some cases like the following rule show valid exceptions to this one.
 
-### CODN007 - Use Verbs Prefix Like `is_` Or `should_` For Booleans
+### CODN007 - Use Verb Prefixes Like `is_` Or `should_` For Booleans
 
 DO:
 
@@ -138,11 +138,11 @@ This avoids confusion between:
 
 ## Writing
 
-### CODW001 - Top Down Organization
+### CODW001 - Top-Down Organization
 
 When using a language that allows it, write the public methods and public functions at the top of the class or the module.
 
-This allows the reader to look at the available public code faster and hide the implementations details bellow, available to read only if necessary.
+This allows the reader to look at the available public code faster and hide the implementation details below, available to read only if necessary.
 
 ### CODW002 - Keep Dependencies Close
 

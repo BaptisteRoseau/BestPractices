@@ -3,6 +3,8 @@
   "language": "en",
   "version": "0.2",
   "words": [
+    "APIG",
+    "APIW",
     "CODD",
     "CODW",
     "distroless",
@@ -15,6 +17,8 @@
     "PMAS",
     "PROE",
     "readelf",
+    "SARG",
+    "SARP",
     "SRTC",
     "SRTE",
     "SRTG",

@@ -8,46 +8,46 @@ Write your business logic using abstract objects.
 
 Almost every time you need interactions between objects, you should specify how they interact with each other using interfaces.
 
-The use of interfaces is great for at least:
+The use of interfaces is beneficial for at least:
 
 - Maintainability
 - Replacing legacy code (as long as the interface remains)
 - Hiding implementation
 - Testing through mocking
-- Select which implementation should be used
-- Allow team members to work in parallel
+- Selecting which implementation should be used
+- Allowing team members to work in parallel
 
-Interfaces can be used everywhere, whether it is in your code, your ticket templates, your web API. Use this rule every time a feature should be provided but the implementation details do not matter.
+Interfaces can be used everywhere, whether in your code, your ticket templates, or your web API. Use this rule every time a feature should be provided but the implementation details do not matter.
 
-An interface can be as simple as using the alias `typedef char* Name`, or using a class, a trait or a structure.
+An interface can be as simple as using the alias `typedef char* Name`, or using a class, a trait, or a structure.
 
-If your language provides and interface functionality such as `Interface` in Java, `class` in Python or C++ or `trait` in Rust, use it.
-If it provides visibility mechanisms such as `public`, `private` or `protected` in C++, make sure it is used wisely and only the minimum required is public.
+If your language provides an interface functionality such as `Interface` in Java, `class` in Python or C++, or `trait` in Rust, use it.
+If it provides visibility mechanisms such as `public`, `private`, or `protected` in C++, make sure they are used wisely and only the minimum required is public.
 
 ### SARG002 - Make Sure You Use Interfaces
 
-Just to make sure you don't forget [SARG001](#sarg001---use-interfaces)
+Just to make sure you don't forget [SARG001](#sarg001---use-interfaces).
 
 ### SARG003 - Business Logic Comes First
 
-When writing a piece of software, the user needs to come first, not the implementation difficulty. Trade-off could be made to reduce the scope.
+When writing a piece of software, the user needs to come first, not the implementation difficulty. Trade-offs can be made to reduce the scope.
 
-1. Discuss exactly what the user need is.
+1. Discuss exactly what the user's need is.
 1. Extract the main objects used by the business logic.
-1. Specify how those objects interact with each other (their __interfaces__)
-1. What are the inputs and outputs of the business logic using those objects.
+1. Specify how those objects interact with each other (their __interfaces__).
+1. Define the inputs and outputs of the business logic using those objects.
 
 Then, write the business logic using those objects _as if_ they were already implemented.
 
 ### SARG004 - Avoid Side Effects
 
-Side effect are evil because they hide you current environment before and after calling the function - regardless of the return value of course.
+Side effects are problematic because they obscure the current environment before and after calling the function - regardless of the return value, of course.
 
-If done badly, side effects can be a real nightmare to debug, especially if they are not clearly documented.
+If done poorly, side effects can be a real nightmare to debug, especially if they are not clearly documented.
 
-They can of course be used _within_ an object, for example a `set_ready()` method may modify an object attribute, which is a side effect within an object of a class.
+They can, of course, be used _within_ an object. For example, a `set_ready()` method may modify an object attribute, which is a side effect within an object of a class.
 
-There are some languages such as `Rust` that do a wonderful job at telling the programmer that a side effect can occur on a function parameter by specifying its mutability.
+There are some languages such as `Rust` that do a wonderful job of informing the programmer that a side effect can occur on a function parameter by specifying its mutability.
 
 ### SARG005 - Add feature flags
 
