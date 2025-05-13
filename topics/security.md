@@ -90,4 +90,13 @@ Always pull your container images from trusted sources and publishers, or build 
 
 This is a duplicate of [Keep Your Software Up To Date](#srtg003---keep-your-software-up-to-date). However, encryption stack is so critical its update deserves its own rule.
 
+### SRTE002 - Use Defense Software
+
+There are plenty of software used to defend against attacks, free or paid, that you should use to defend yourself. For example:
+
+- You should at least manage your Firewall to prevent against malicious IPs.
+- Install tools like [fail2ban](https://github.com/fail2ban/fail2ban) that read logs and automatically ban brute force attackers' IPs.
+- If your website is bombarded by bots, consider using [Cloudflare](https://www.cloudflare.com/) or a similar service.
+- Centralize your logs where you can query them, to be able to make forensic analysis.
+
 Next: [Project Management](./project_management.md)
