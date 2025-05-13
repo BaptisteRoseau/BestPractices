@@ -11,6 +11,8 @@ When found, keep it at hand, unplug your mouse and try to only use keyboard to n
 
 This will be confusing and hard at the beginning but over time it can multiply your productivity more that you can imagine.
 
+Of course, unplug your mouse when _learning_ keyboard shortcuts, not when actually working.
+
 ### PROE002 - Set Up Your IDE
 
 Look for a set-up tutorial and best practices on the internet to find the best features or plugins of your IDE.

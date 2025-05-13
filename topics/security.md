@@ -10,30 +10,32 @@ These set of rules help making an attack harder.
 
 Always consider that the application you are writing, the container you are building or the node you are setting up is already hacked.
 
-What information do the attacker has access to ? Credentials ? Encrypt them. Open port ? Close them. Root access ? Run as a user. Writing permissions ? Differentiate owner and executor of source files.
+What information does the attacker have access to ? Credentials ? Encrypt them. Open port ? Close them. Root access ? Run as a user. Writing permissions ? Differentiate owner and executor of source files.
 
 By considering everything already hacked, you can clearly see what needs additional security measures. Fix them.
 
 ### SRTG002 - Use Minimal Permissions
 
-You should always give minimal permissions whether in the production environment or the CI/CD tooling and organization member accesses. However, make sure that factorization is always considered **before** this step. Avoid duplication, and if a reorganization is required, reorganize.
+You should always give minimal permissions whether in the production environment or the CI/CD tooling and organization member accesses. Avoid duplication, and if a reorganization is required, reorganize.
 
-A drawback of this rule is that access and management of the production environment and the CI/CD tools can become unbelievably hard is done badly.
-This can be overcome by using standards, containers or tools to avoid manual management by all cost.
+A drawback of this rule is that access management can become unbelievably hard, and a pain to work with. Find the right trade off for your team.
+This can be overcome by using standards, containers or tools like OAuth to avoid manual management.
 
 ### SRTG003 - Keep Your Software Up To Date
 
-There is a tremendous amount of new vulnerabilities found every day. Those vulnerabilities are often patched rapidly so you should always keep your software up to date to make sure those vulnerabilities include those patches.
+There is a tremendous amount of new vulnerabilities found every day. Those vulnerabilities are often patched rapidly so you should always keep your software up to date to make sure those vulnerabilities are patched.
 
 ## Executables
 
 ### SRTX001 - Strip Executables
 
-Use the `strip --strip-all` command to remove all the documentation symbols and reduce the executable size.
+Use the `strip --strip-all` command to remove all the symbols documentation and reduce the executable size.
 
 ### SRTX002 - Use Obfuscation
 
 Obfuscate your code when possible using specialized tool for your language.
+
+For example, for a web page's javascript, bundle your code using Vite. This will both obfuscate the code and reduce its size.
 
 ### SRTX003 - Remove Symbol Addresses
 
@@ -43,21 +45,22 @@ This avoids attacks based on symbols address offset.
 
 ## Containers
 
-Containers are a great part of today's IT environment. Making sure they are secured if very important.
+Containers are a great part of today's IT environment. Making sure they are secure is very important.
 
-`nonroot` distroless containers with statically linked compiled stripped executables are great for production environment, whereas CI containers can be less secure but from known internal sources.
+`nonroot` distroless containers with statically linked compiled stripped executables are great for production environment, whereas CI containers can be less secure but pulled or built from trusted sources.
 
 ### SRTC003 - Avoid Using `root` User
 
 For production containers, you should always run as a non-root user.
 
 Specify the `USER` instruction in the `Dockerfile` and make sure the files have minimal permissions required by this user.
+Read-only files should be owned by root to prevent any modification.
 
 ### SRTC003 - Make Executables Read-Only
 
-Make sure the executables files have only `r-x` permissions to the user executing the code.
+Make sure the executables files have only `r-x` permissions for the user executing the code.
 
-The executables can either be owned by a specific user or by `root`, a specific user being preferred.
+The executables can either be owned by another user or by `root`.
 
 ### SRTC003 - Use Minimal Dependencies
 
@@ -67,8 +70,6 @@ Never include unused dependencies within a container. More dependencies means mo
 
 Always specify an `ENTRYPOINT` in the `Dockerfile` with a default `CMD`.
 
-This is done to avoid an attacker
-
 ### SRTC003 - Consider Every Layer Is Into The Final Image
 
 Every layer of a container image is stored and cached.
@@ -77,11 +78,11 @@ This means that if secrets or files are copied into the image and then removed, 
 
 Hence, anyone can access it even if it is not in the final image. Never add sensitive files or source code within the final container.
 
-To avoid this issue, use _multiple step image building_.
+To avoid this issue, use [multi-stage image building](https://docs.docker.com/build/building/multi-stage/).
 
 ### SRTC003 - Use Trusted Sources
 
-Always pull your container images from trusted sources and publishers, or build and push then from your company in your own registry.
+Always pull your container images from trusted sources and publishers, or build and push them from your company's own registry.
 
 ## Environment
 
